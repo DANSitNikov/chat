@@ -1,14 +1,31 @@
 import React from 'react';
-import avatar from '../../assets/avatar.png';
 import style from './Messages.module.css';
+import { StateItem } from '../../App';
+import Message from './message';
 
-const Messages: React.FC = () => {
+interface Props {
+  state: Array<StateItem>
+}
+
+const Messages: React.FC<Props> = (props) => {
+  const { state } = props;
+
   return (
-    <div className={style.message}>
-      <img src={avatar} alt="person" />
-      <p>
-        message
-      </p>
+    <div className={style.container}>
+      {
+        state && state.length > 0
+        && (
+          state.map((message, i) => <Message key={i} mes={message} />)
+        )
+      }
+      {
+        (!state || state.length) === 0
+        && (
+          <p className={style.noMessages}>
+            There are no messages yet
+          </p>
+        )
+      }
     </div>
   );
 };
