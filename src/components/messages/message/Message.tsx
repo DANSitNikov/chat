@@ -7,6 +7,17 @@ interface Props {
   mes: StateItem
 }
 
+/**
+ *
+ * Функциональная компонента
+ *
+ * @param {Props} props - объект, в котором есть:
+ * объект mes: 1) сообщение
+ *             2) временная метка
+ *
+ * @return {JSX.Element} - возвращает jsx разметку сообщения
+ * */
+
 const Message: React.FC<Props> = (props) => {
   const { mes } = props;
 

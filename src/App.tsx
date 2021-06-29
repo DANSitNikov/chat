@@ -9,6 +9,13 @@ export interface StateItem {
   timestamp: any
 }
 
+/**
+ *
+ * Функциональная компонента (делает асинхронный запрос за данными)
+ *
+ * @return {JSX.Element} - возвращает jsx разметку всего приложения
+ * */
+
 const App: React.FC = () => {
   const [state, setState] = useState<Array<StateItem>>([]);
 

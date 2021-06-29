@@ -9,6 +9,17 @@ interface Props {
   state: Array<StateItem>
 }
 
+/**
+ *
+ * Функциональная компонента
+ *
+ * @param {Props} props - объект, в котором есть:
+ * setState (обновляет текущий state)
+ * state (хранилище сообщений)
+ *
+ * @return {JSX.Element} - возвращает jsx разметку формы
+ * */
+
 const Input: React.FC<Props> = (props) => {
   const [message, setMessage] = useState<string>('');
   const { setState, state } = props;

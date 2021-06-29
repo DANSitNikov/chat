@@ -7,6 +7,16 @@ interface Props {
   state: Array<StateItem>
 }
 
+/**
+ *
+ * Функциональная компонента
+ *
+ * @param {Props} props - объект, в котором есть:
+ * state (хранилище сообщений)
+ *
+ * @return {JSX.Element} - возвращает jsx разметку обертки для сообщений
+ * */
+
 const Messages: React.FC<Props> = (props) => {
   const { state } = props;
 
