@@ -11,9 +11,12 @@
   height: 50px;
   border-radius: 50%;
 }
-.message p {
+.message div {
   font-size: 16px;
   font-weight: 500;
+}
+.message div p {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 /*# sourceMappingURL=Message.module.css.map */

@@ -20,20 +20,20 @@ interface Props {
 
 const Message: React.FC<Props> = (props) => {
   const { mes } = props;
+  console.log(mes);
 
   return (
     <div className={style.message}>
       <img src={avatar} alt="person" />
-      <p>
+      <div>
         {mes.message.split('\n').map((string, i) => {
           return (
-            <span key={i}>
+            <p key={i}>
               {string}
-              <br />
-            </span>
+            </p>
           );
         })}
-      </p>
+      </div>
     </div>
   );
 };

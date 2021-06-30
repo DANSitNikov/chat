@@ -18,24 +18,13 @@ export interface StateItem {
 
 const App: React.FC = React.memo(() => {
   const [state, setState] = useState<Array<StateItem>>([]);
-  // const [otherState] = useState(async () => {
-  //   const dataMes: any = [];
-  //   await db.collection('messages').orderBy('timestamp', 'asc').get().then((querySnapshot) => {
-  //     querySnapshot.forEach((message) => {
-  //       // console.log(message.data());
-  //       dataMes.push(message.data());
-  //     });
-  //   });
-  //   return dataMes;
-  // });
-
-  // console.log(otherState, 'state');
 
   useEffect(() => {
     if (state.length === 0) {
       (async function () {
         await db.collection('messages').orderBy('timestamp', 'asc').onSnapshot((querySnapshot) => {
           const data: any = [];
+
           querySnapshot.forEach((message) => {
             const pushToData = message.data() as StateItem;
             data.push(pushToData);
