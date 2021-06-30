@@ -29,6 +29,7 @@ const Input: React.FC<Props> = (props) => {
     setState([{ message, timestamp: firebase.firestore.FieldValue.serverTimestamp() }, ...state]);
     setMessage('');
 
+    /** add new message to firestore database */
     db.collection('messages').add({
       message,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),

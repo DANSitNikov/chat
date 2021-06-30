@@ -20,7 +20,6 @@ interface Props {
 
 const Message: React.FC<Props> = (props) => {
   const { mes } = props;
-  console.log(mes);
 
   return (
     <div className={style.message}>

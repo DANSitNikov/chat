@@ -22,6 +22,7 @@ const App: React.FC = React.memo(() => {
   useEffect(() => {
     if (state.length === 0) {
       (async function () {
+        /** get state every time, when firestore updates */
         await db.collection('messages').orderBy('timestamp', 'asc').onSnapshot((querySnapshot) => {
           const data: any = [];
 
