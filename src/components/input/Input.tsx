@@ -24,12 +24,14 @@ const Input: React.FC<Props> = (props) => {
   const [message, setMessage] = useState<string>('');
   const { setState, state } = props;
 
+  /** Отправка формы */
   const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    /** Добавление нового сообщения в state */
     setState([{ message, timestamp: firebase.firestore.FieldValue.serverTimestamp() }, ...state]);
     setMessage('');
 
-    /** add new message to firestore database */
+    /** Добавление нового сообщения в базу данных */
     db.collection('messages').add({
       message,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
